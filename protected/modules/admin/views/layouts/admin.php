@@ -26,9 +26,10 @@
                 <?php
                 $this->widget('zii.widgets.CMenu', array(
                     'items' => array(
+                        array('label' => 'Меню', 'url' => array('/admin/menu')),
                         array('label' => 'Новости', 'url' => array('/admin/news')),
                         array('label' => 'Страницы', 'url' => array('/admin/page')),
-                        array('label' => 'Меню', 'url' => array('/admin/menu')),
+                        array('label' => 'Вопрос-ответ', 'url' => array('/admin/faq')),
                         array('label' => 'Вход на сайт', 'url' => array('/site/login'), 'visible' => Yii::app()->user->isGuest),
                         array('label' => 'Выход (' . Yii::app()->user->name . ')', 'url' => array('/site/logout'), 'visible' => !Yii::app()->user->isGuest)
                     ),

@@ -63,6 +63,10 @@ class AdmController extends Controller {
      * @param integer $id the ID of the model to be updated
      */
     public function actionUpdate($id) {
+        if (isset($_POST['delete'])) {
+            $this->actionDelete($id);
+            Yii::app()->end();
+        }
         $model = $this->loadModel($id);
 
         $this->performAjaxValidation($model);
@@ -70,7 +74,11 @@ class AdmController extends Controller {
         if (isset($_POST[$this->modelName])) {
             $model->attributes = $_POST[$this->modelName];
             if ($model->save()) {
-                $this->redirect(array('update', 'id' => $model->id));
+                if (isset($_POST['close'])) {
+                    $this->redirect(array('admin'));
+                } else {
+                    $this->redirect(array('update', 'id' => $model->id));
+                }
             }
         }
 

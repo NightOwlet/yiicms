@@ -10,6 +10,7 @@ return array(
     'name' => 'My Web Application',
     // preloading 'log' component
     'preload' => array('log'),
+    'language' => 'ru',
     // autoloading model and component classes
     'import' => array(
         'application.models.*',
@@ -32,6 +33,10 @@ return array(
         'page' => array(
             'menu_item' => true,
             'shown_name' => 'Статические страницы',
+        ),
+        'faq' =>array(
+            'menu_item' => true,
+            'shown_name' => 'Вопрос-ответ',
         ),
         'menu',
     ),

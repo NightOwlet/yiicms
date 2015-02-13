@@ -1,1 +1,4 @@
-/nbproject/private/
+/nbproject/
+/assets/
+/protected/runtime/
+/framework/

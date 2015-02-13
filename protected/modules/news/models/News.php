@@ -62,5 +62,11 @@ class News extends CActiveRecord {
             'order' => 'time DESC',
         );
     }
+    
+    public function recently($count) {
+        $criteria = new CDbCriteria(array('limit'=>$count));
+        $this->getDbCriteria()->mergeWith($criteria);
+        return $this;
+    }
 
 }
